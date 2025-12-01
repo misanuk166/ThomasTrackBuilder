@@ -1,112 +1,170 @@
-.app {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-.app-header {
-  text-align: center;
-  margin-bottom: 2rem;
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.app-header h1 {
-  font-size: 2.5rem;
-  margin: 0 0 0.5rem 0;
+.app-header-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+  flex-shrink: 0;
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 1.5rem;
   color: #333;
 }
 
-.app-header p {
-  font-size: 1.1rem;
+.header-subtitle {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
   color: #666;
-  margin: 0;
 }
 
-.controls {
+.header-controls {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background: #f5f5f5;
-  border-radius: 8px;
+  gap: 1rem;
+  align-items: center;
 }
 
-.controls label {
+.control-checkbox {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  color: #333;
+  user-select: none;
 }
 
-.controls input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+.control-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
   cursor: pointer;
 }
 
-.app-main {
-  min-height: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.canvas-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.piece-count {
-  font-size: 0.9rem;
-  color: #666;
+.btn {
   padding: 0.5rem 1rem;
-  background: #f9f9f9;
-  border-radius: 4px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-.loading,
-.error,
-.empty {
+.btn-secondary {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #e8e8e8;
+  border-color: #ccc;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loading-overlay,
+.error-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  padding: 3rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
 }
 
-.loading p {
-  font-size: 1.2rem;
+.loading-overlay p {
+  margin: 0;
+  font-size: 1.1rem;
   color: #666;
 }
 
-.error {
+.error-overlay {
   background: #fee;
-  border: 1px solid #fcc;
-  border-radius: 8px;
+  border: 2px solid #fcc;
   color: #c33;
 }
 
-.error p {
+.error-overlay p {
   margin: 0.5rem 0;
 }
 
-.empty p {
-  font-size: 1.1rem;
-  color: #999;
+.app-main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
 
-.app-footer {
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
-  text-align: center;
+.canvas-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow: auto;
+  background: #fafafa;
+}
+
+.canvas-area canvas {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.canvas-status {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.status-item {
+  font-size: 0.9rem;
   color: #666;
-  font-size: 0.85rem;
 }
 
-.app-footer p {
-  margin: 0;
-  line-height: 1.6;
+.status-item strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.status-selected {
+  color: #4A90E2;
+  font-weight: 500;
+}
+
+.status-selected strong {
+  color: #4A90E2;
+}
+
+.status-editing {
+  color: #F59E0B;
+  font-weight: 500;
 }
