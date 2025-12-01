@@ -1,0 +1,104 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-01",
+  "description": "Thomas TrackMaster track piece catalog",
+  "pieces": [
+    {
+      "id": "straight-standard",
+      "file": "tracks/straight/straight-standard.json",
+      "category": "straight",
+      "name": "Standard Straight Track",
+      "commonName": "Straight"
+    },
+    {
+      "id": "straight-short",
+      "file": "tracks/straight/straight-short.json",
+      "category": "straight",
+      "name": "Short Straight Track",
+      "commonName": "Short Straight"
+    },
+    {
+      "id": "curve-standard-60",
+      "file": "tracks/curved/curve-standard-60.json",
+      "category": "curved",
+      "name": "Standard Curve Track (60°)",
+      "commonName": "Curve"
+    },
+    {
+      "id": "switch-left",
+      "file": "tracks/switches/switch-left.json",
+      "category": "switch",
+      "name": "Left Switch Track",
+      "commonName": "Left Switch"
+    },
+    {
+      "id": "switch-right",
+      "file": "tracks/switches/switch-right.json",
+      "category": "switch",
+      "name": "Right Switch Track",
+      "commonName": "Right Switch"
+    },
+    {
+      "id": "switch-y",
+      "file": "tracks/switches/switch-y.json",
+      "category": "switch",
+      "name": "Y-Junction Switch",
+      "commonName": "Y-Switch"
+    }
+  ],
+  "categories": [
+    {
+      "id": "straight",
+      "name": "Straight Tracks",
+      "description": "Standard straight track pieces of various lengths",
+      "icon": "icons/straight.svg",
+      "order": 1
+    },
+    {
+      "id": "curved",
+      "name": "Curved Tracks",
+      "description": "Curved track pieces for creating turns and loops",
+      "icon": "icons/curved.svg",
+      "order": 2
+    },
+    {
+      "id": "switch",
+      "name": "Switches & Turnouts",
+      "description": "Track switches for branching and complex layouts",
+      "icon": "icons/switch.svg",
+      "order": 3
+    },
+    {
+      "id": "special",
+      "name": "Special Tracks",
+      "description": "Crossings, turntables, and other special pieces",
+      "icon": "icons/special.svg",
+      "order": 4
+    },
+    {
+      "id": "elevation",
+      "name": "Elevation Pieces",
+      "description": "Risers, bridges, and elevation-changing tracks",
+      "icon": "icons/elevation.svg",
+      "order": 5
+    },
+    {
+      "id": "accessory",
+      "name": "Accessories",
+      "description": "Stations, terminals, and decorative pieces",
+      "icon": "icons/accessory.svg",
+      "order": 6
+    }
+  ],
+  "stats": {
+    "totalPieces": 6,
+    "categoryCounts": {
+      "straight": 2,
+      "curved": 1,
+      "switch": 3,
+      "special": 0,
+      "elevation": 0,
+      "accessory": 0
+    }
+  }
+}

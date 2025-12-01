@@ -1,0 +1,84 @@
+{
+  "id": "switch-y",
+  "name": "Y-Junction Switch",
+  "category": "switch",
+  "type": "switch-y",
+  "dimensions": {
+    "length": 215,
+    "width": 180,
+    "height": 12,
+    "unit": "mm"
+  },
+  "connections": [
+    {
+      "id": "conn-input",
+      "type": "male",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 180,
+      "height": 12
+    },
+    {
+      "id": "conn-left",
+      "type": "female",
+      "position": {
+        "x": 170,
+        "y": 45
+      },
+      "angle": 45,
+      "height": 12
+    },
+    {
+      "id": "conn-right",
+      "type": "female",
+      "position": {
+        "x": 170,
+        "y": -45
+      },
+      "angle": 315,
+      "height": 12
+    }
+  ],
+  "geometry": {
+    "type": "composite",
+    "path": {
+      "type": "composite",
+      "segments": [
+        {
+          "type": "arc",
+          "center": {
+            "x": 100,
+            "y": -100
+          },
+          "radius": 112,
+          "startAngle": 90,
+          "endAngle": 135,
+          "clockwise": false
+        },
+        {
+          "type": "arc",
+          "center": {
+            "x": 100,
+            "y": 100
+          },
+          "radius": 112,
+          "startAngle": 270,
+          "endAngle": 225,
+          "clockwise": true
+        }
+      ]
+    }
+  },
+  "visual": {
+    "color": "#FF8C42",
+    "renderStyle": "simple"
+  },
+  "metadata": {
+    "manufacturer": "Fisher-Price",
+    "productLine": "TrackMaster",
+    "availability": "current",
+    "notes": "Y-junction allows splitting into two diverging paths (left or right). Features mechanical switch operation with gray lever. No straight-through option. Orange color in modern sets."
+  }
+}

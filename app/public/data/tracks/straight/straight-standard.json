@@ -1,0 +1,58 @@
+{
+  "id": "straight-standard",
+  "name": "Standard Straight Track",
+  "category": "straight",
+  "type": "straight-standard",
+  "dimensions": {
+    "length": 215,
+    "width": 45,
+    "height": 12,
+    "unit": "mm"
+  },
+  "connections": [
+    {
+      "id": "conn-1",
+      "type": "male",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 180,
+      "height": 12
+    },
+    {
+      "id": "conn-2",
+      "type": "female",
+      "position": {
+        "x": 215,
+        "y": 0
+      },
+      "angle": 0,
+      "height": 12
+    }
+  ],
+  "geometry": {
+    "type": "line",
+    "path": {
+      "type": "line",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 215,
+        "y": 0
+      }
+    }
+  },
+  "visual": {
+    "color": "#FF8C42",
+    "renderStyle": "simple"
+  },
+  "metadata": {
+    "manufacturer": "Fisher-Price",
+    "productLine": "TrackMaster",
+    "availability": "current",
+    "notes": "Standard straight track piece, orange color. Most common straight track in modern sets."
+  }
+}

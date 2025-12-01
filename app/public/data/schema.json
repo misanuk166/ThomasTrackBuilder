@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://thomastrackbuilder.com/schemas/track-piece.json",
+  "title": "TrackMaster Track Piece",
+  "description": "Schema for Thomas TrackMaster track piece definitions",
+  "type": "object",
+  "required": ["id", "name", "category", "type", "dimensions", "connections", "geometry", "visual", "metadata"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier in kebab-case",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name",
+      "minLength": 3
+    },
+    "category": {
+      "type": "string",
+      "enum": ["straight", "curved", "switch", "special", "elevation", "accessory"],
+      "description": "Primary category classification"
+    },
+    "type": {
+      "type": "string",
+      "description": "Specific type within category"
+    },
+    "dimensions": {
+      "type": "object",
+      "required": ["height", "unit"],
+      "properties": {
+        "length": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Length in mm (for straight pieces)"
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Width in mm"
+        },
+        "radius": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Curve radius in mm (for curved pieces)"
+        },
+        "angle": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "description": "Curve angle in degrees"
+        },
+        "arcLength": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Arc length in mm"
+        },
+        "height": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Height/thickness in mm"
+        },
+        "clearanceHeight": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Clearance height needed above"
+        },
+        "boundingBox": {
+          "type": "object",
+          "required": ["width", "height"],
+          "properties": {
+            "width": {
+              "type": "number",
+              "minimum": 0
+            },
+            "height": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "unit": {
+          "type": "string",
+          "enum": ["mm"],
+          "description": "Unit of measurement (always millimeters)"
+        }
+      }
+    },
+    "connections": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "description": "Connection points on this piece",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "position", "angle", "height"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^conn-[a-z0-9-]+$",
+            "description": "Unique connection ID within this piece"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["male", "female"],
+            "description": "Connection type"
+          },
+          "position": {
+            "type": "object",
+            "required": ["x", "y"],
+            "properties": {
+              "x": {
+                "type": "number",
+                "description": "X coordinate in mm"
+              },
+              "y": {
+                "type": "number",
+                "description": "Y coordinate in mm"
+              }
+            }
+          },
+          "angle": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 360,
+            "description": "Direction angle in degrees (0=right, 90=up)"
+          },
+          "height": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Height above ground in mm"
+          },
+          "compatible": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional list of compatible connection IDs"
+          }
+        }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "required": ["type", "path"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["line", "arc", "composite"],
+          "description": "Geometry type"
+        },
+        "path": {
+          "type": "object",
+          "description": "Path definition (varies by type)"
+        },
+        "collisionPath": {
+          "type": "object",
+          "description": "Simplified collision detection path"
+        }
+      }
+    },
+    "visual": {
+      "type": "object",
+      "required": ["color", "renderStyle"],
+      "properties": {
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$",
+          "description": "Hex color code"
+        },
+        "texture": {
+          "type": "string",
+          "description": "Optional texture/pattern"
+        },
+        "renderStyle": {
+          "type": "string",
+          "enum": ["simple", "detailed", "realistic"],
+          "description": "Rendering style"
+        },
+        "icon": {
+          "type": "string",
+          "description": "Path to icon/thumbnail"
+        },
+        "modelUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Optional 3D model URL"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["manufacturer", "productLine", "availability"],
+      "properties": {
+        "sku": {
+          "type": "string",
+          "description": "Product SKU"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Manufacturer name"
+        },
+        "productLine": {
+          "type": "string",
+          "description": "Product line (TrackMaster, etc.)"
+        },
+        "availability": {
+          "type": "string",
+          "enum": ["current", "retired", "rare", "common"],
+          "description": "Availability status"
+        },
+        "setIncludes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Sets that include this piece"
+        },
+        "yearIntroduced": {
+          "type": "integer",
+          "minimum": 1990,
+          "maximum": 2100,
+          "description": "Year first released"
+        },
+        "discontinued": {
+          "type": "boolean",
+          "description": "Whether still in production"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional notes"
+        }
+      }
+    }
+  }
+}

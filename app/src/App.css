@@ -1,0 +1,112 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.controls input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.app-main {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.piece-count {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 0.5rem 1rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.loading,
+.error,
+.empty {
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error {
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  color: #c33;
+}
+
+.error p {
+  margin: 0.5rem 0;
+}
+
+.empty p {
+  font-size: 1.1rem;
+  color: #999;
+}
+
+.app-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.app-footer p {
+  margin: 0;
+  line-height: 1.6;
+}

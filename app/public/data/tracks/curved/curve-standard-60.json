@@ -1,0 +1,64 @@
+{
+  "id": "curve-standard-60",
+  "name": "Standard Curve Track (60°)",
+  "category": "curved",
+  "type": "curve-standard",
+  "dimensions": {
+    "radius": 180,
+    "angle": 60,
+    "arcLength": 188.5,
+    "width": 45,
+    "height": 12,
+    "boundingBox": {
+      "width": 155.9,
+      "height": 90
+    },
+    "unit": "mm"
+  },
+  "connections": [
+    {
+      "id": "conn-1",
+      "type": "male",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 180,
+      "height": 12
+    },
+    {
+      "id": "conn-2",
+      "type": "female",
+      "position": {
+        "x": 155.9,
+        "y": 90
+      },
+      "angle": 120,
+      "height": 12
+    }
+  ],
+  "geometry": {
+    "type": "arc",
+    "path": {
+      "type": "arc",
+      "center": {
+        "x": 0,
+        "y": -180
+      },
+      "radius": 180,
+      "startAngle": 90,
+      "endAngle": 150,
+      "clockwise": false
+    }
+  },
+  "visual": {
+    "color": "#5CD4D4",
+    "renderStyle": "simple"
+  },
+  "metadata": {
+    "manufacturer": "Fisher-Price",
+    "productLine": "TrackMaster",
+    "availability": "current",
+    "notes": "Six pieces form a complete circle (6 × 60° = 360°). Most common curved track piece. Teal/turquoise color in modern sets."
+  }
+}

@@ -17,14 +17,15 @@ Enable users to design valid track layouts using drag-and-drop, with smart snapp
 
 ## Project Status
 
-**Current Phase**: Data Model & Schema Definition ✅
+**Current Phase**: Rendering Prototype ✅
 
 - [x] Product Requirements Document (PRD)
 - [x] Track piece data schema
-- [x] Initial track piece library (5 pieces)
+- [x] Initial track piece library (6 pieces)
 - [x] JSON Schema validation
-- [ ] Project scaffolding (React/Vite)
-- [ ] Canvas rendering engine
+- [x] Project scaffolding (React/Vite)
+- [x] Canvas rendering engine
+- [x] Basic track visualization
 - [ ] Drag-and-drop implementation
 - [ ] Snapping logic
 - [ ] Validation engine
@@ -105,11 +106,12 @@ See [docs/TRACK_PIECE_SCHEMA.md](docs/TRACK_PIECE_SCHEMA.md) for full details.
 - [x] Data model and schema
 - [x] Initial track piece library
 
-### Phase 2: Prototype (Next)
-- [ ] Project setup (React + Vite)
-- [ ] Canvas rendering
-- [ ] Basic piece visualization
-- [ ] Simple drag-and-drop
+### Phase 2: Prototype ✅
+- [x] Project setup (React + Vite)
+- [x] Canvas rendering
+- [x] Basic piece visualization
+- [x] Track piece loader
+- [ ] Simple drag-and-drop (Next)
 
 ### Phase 3: Core Features
 - [ ] Smart snapping logic
@@ -135,14 +137,15 @@ To add a new track piece:
 3. Validate against the schema
 4. Add to `track-catalog.json`
 
-## Tech Stack (Planned)
+## Tech Stack
 
-- **Frontend**: React or Vue.js
-- **Rendering**: HTML5 Canvas or SVG
-- **State**: Redux/Zustand or Context API
-- **Drag-and-Drop**: react-dnd or native API
-- **Styling**: Tailwind CSS or styled-components
-- **Validation**: Custom physics/validation engine
+- **Frontend**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Rendering**: HTML5 Canvas
+- **State**: React hooks (useState, useEffect)
+- **Styling**: CSS (native)
+- **Data Loading**: Native fetch API
+- **Validation**: Custom physics/validation engine (planned)
 
 ## License
 
