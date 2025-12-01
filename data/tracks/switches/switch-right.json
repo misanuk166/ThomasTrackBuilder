@@ -72,13 +72,13 @@
     }
   },
   "visual": {
-    "color": "#E24A4A",
+    "color": "#FF8C42",
     "renderStyle": "simple"
   },
   "metadata": {
     "manufacturer": "Fisher-Price",
     "productLine": "TrackMaster",
     "availability": "current",
-    "notes": "Allows branching to right. Features mechanical switch operation. Trains can go straight or diverge right."
+    "notes": "Allows branching to right. Features mechanical switch operation with gray lever. Trains can go straight or diverge right. Orange color in modern sets."
   }
 }

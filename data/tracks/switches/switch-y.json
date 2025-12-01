@@ -1,11 +1,11 @@
 {
-  "id": "switch-left",
-  "name": "Left Switch Track",
+  "id": "switch-y",
+  "name": "Y-Junction Switch",
   "category": "switch",
-  "type": "switch-left",
+  "type": "switch-y",
   "dimensions": {
     "length": 215,
-    "width": 90,
+    "width": 180,
     "height": 12,
     "unit": "mm"
   },
@@ -21,23 +21,23 @@
       "height": 12
     },
     {
-      "id": "conn-straight",
-      "type": "female",
-      "position": {
-        "x": 215,
-        "y": 0
-      },
-      "angle": 0,
-      "height": 12
-    },
-    {
-      "id": "conn-diverge",
+      "id": "conn-left",
       "type": "female",
       "position": {
         "x": 170,
         "y": 45
       },
       "angle": 45,
+      "height": 12
+    },
+    {
+      "id": "conn-right",
+      "type": "female",
+      "position": {
+        "x": 170,
+        "y": -45
+      },
+      "angle": 315,
       "height": 12
     }
   ],
@@ -46,17 +46,6 @@
     "path": {
       "type": "composite",
       "segments": [
-        {
-          "type": "line",
-          "start": {
-            "x": 0,
-            "y": 0
-          },
-          "end": {
-            "x": 215,
-            "y": 0
-          }
-        },
         {
           "type": "arc",
           "center": {
@@ -67,6 +56,17 @@
           "startAngle": 90,
           "endAngle": 135,
           "clockwise": false
+        },
+        {
+          "type": "arc",
+          "center": {
+            "x": 100,
+            "y": 100
+          },
+          "radius": 112,
+          "startAngle": 270,
+          "endAngle": 225,
+          "clockwise": true
         }
       ]
     }
@@ -79,6 +79,6 @@
     "manufacturer": "Fisher-Price",
     "productLine": "TrackMaster",
     "availability": "current",
-    "notes": "Allows branching to left. Features mechanical switch operation with gray lever. Trains can go straight or diverge left. Orange color in modern sets."
+    "notes": "Y-junction allows splitting into two diverging paths (left or right). Features mechanical switch operation with gray lever. No straight-through option. Orange color in modern sets."
   }
 }
