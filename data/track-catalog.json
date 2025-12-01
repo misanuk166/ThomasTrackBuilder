@@ -18,17 +18,10 @@
       "commonName": "Short Straight"
     },
     {
-      "id": "straight-medium",
-      "file": "tracks/straight/straight-medium.json",
-      "category": "straight",
-      "name": "Medium Straight Track",
-      "commonName": "Medium Straight"
-    },
-    {
-      "id": "curve-standard-45",
-      "file": "tracks/curved/curve-standard-45.json",
+      "id": "curve-standard-60",
+      "file": "tracks/curved/curve-standard-60.json",
       "category": "curved",
-      "name": "Standard Curve Track (45°)",
+      "name": "Standard Curve Track (60°)",
       "commonName": "Curve"
     },
     {
@@ -98,9 +91,9 @@
     }
   ],
   "stats": {
-    "totalPieces": 7,
+    "totalPieces": 6,
     "categoryCounts": {
-      "straight": 3,
+      "straight": 2,
       "curved": 1,
       "switch": 3,
       "special": 0,
