@@ -1,0 +1,64 @@
+{
+  "id": "curve-standard-45",
+  "name": "Standard Curve Track (45°)",
+  "category": "curved",
+  "type": "curve-standard",
+  "dimensions": {
+    "radius": 180,
+    "angle": 45,
+    "arcLength": 141.4,
+    "width": 45,
+    "height": 12,
+    "boundingBox": {
+      "width": 127.3,
+      "height": 52.7
+    },
+    "unit": "mm"
+  },
+  "connections": [
+    {
+      "id": "conn-1",
+      "type": "male",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 180,
+      "height": 12
+    },
+    {
+      "id": "conn-2",
+      "type": "female",
+      "position": {
+        "x": 127.3,
+        "y": 52.7
+      },
+      "angle": 135,
+      "height": 12
+    }
+  ],
+  "geometry": {
+    "type": "arc",
+    "path": {
+      "type": "arc",
+      "center": {
+        "x": 0,
+        "y": -180
+      },
+      "radius": 180,
+      "startAngle": 90,
+      "endAngle": 135,
+      "clockwise": false
+    }
+  },
+  "visual": {
+    "color": "#4A90E2",
+    "renderStyle": "simple"
+  },
+  "metadata": {
+    "manufacturer": "Fisher-Price",
+    "productLine": "TrackMaster",
+    "availability": "current",
+    "notes": "Eight pieces form a complete circle (8 × 45° = 360°). Most common curved track piece."
+  }
+}

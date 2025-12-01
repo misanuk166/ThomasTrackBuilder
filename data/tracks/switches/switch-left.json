@@ -1,0 +1,84 @@
+{
+  "id": "switch-left",
+  "name": "Left Switch Track",
+  "category": "switch",
+  "type": "switch-left",
+  "dimensions": {
+    "length": 215,
+    "width": 90,
+    "height": 12,
+    "unit": "mm"
+  },
+  "connections": [
+    {
+      "id": "conn-input",
+      "type": "male",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 180,
+      "height": 12
+    },
+    {
+      "id": "conn-straight",
+      "type": "female",
+      "position": {
+        "x": 215,
+        "y": 0
+      },
+      "angle": 0,
+      "height": 12
+    },
+    {
+      "id": "conn-diverge",
+      "type": "female",
+      "position": {
+        "x": 170,
+        "y": 45
+      },
+      "angle": 45,
+      "height": 12
+    }
+  ],
+  "geometry": {
+    "type": "composite",
+    "path": {
+      "type": "composite",
+      "segments": [
+        {
+          "type": "line",
+          "start": {
+            "x": 0,
+            "y": 0
+          },
+          "end": {
+            "x": 215,
+            "y": 0
+          }
+        },
+        {
+          "type": "arc",
+          "center": {
+            "x": 100,
+            "y": -100
+          },
+          "radius": 112,
+          "startAngle": 90,
+          "endAngle": 135,
+          "clockwise": false
+        }
+      ]
+    }
+  },
+  "visual": {
+    "color": "#E24A4A",
+    "renderStyle": "simple"
+  },
+  "metadata": {
+    "manufacturer": "Fisher-Price",
+    "productLine": "TrackMaster",
+    "availability": "current",
+    "notes": "Allows branching to left. Features mechanical switch operation. Trains can go straight or diverge left."
+  }
+}

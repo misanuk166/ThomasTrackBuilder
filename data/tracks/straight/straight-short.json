@@ -1,0 +1,58 @@
+{
+  "id": "straight-short",
+  "name": "Short Straight Track",
+  "category": "straight",
+  "type": "straight-short",
+  "dimensions": {
+    "length": 107.5,
+    "width": 45,
+    "height": 12,
+    "unit": "mm"
+  },
+  "connections": [
+    {
+      "id": "conn-1",
+      "type": "male",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 180,
+      "height": 12
+    },
+    {
+      "id": "conn-2",
+      "type": "female",
+      "position": {
+        "x": 107.5,
+        "y": 0
+      },
+      "angle": 0,
+      "height": 12
+    }
+  ],
+  "geometry": {
+    "type": "line",
+    "path": {
+      "type": "line",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 107.5,
+        "y": 0
+      }
+    }
+  },
+  "visual": {
+    "color": "#4A90E2",
+    "renderStyle": "simple"
+  },
+  "metadata": {
+    "manufacturer": "Fisher-Price",
+    "productLine": "TrackMaster",
+    "availability": "current",
+    "notes": "Half the length of medium straight track, used for fine-tuning layout sizes"
+  }
+}
