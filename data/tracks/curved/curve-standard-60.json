@@ -10,8 +10,8 @@
     "width": 45,
     "height": 12,
     "boundingBox": {
-      "width": 155.9,
-      "height": 90
+      "width": 180,
+      "height": 180
     },
     "unit": "mm"
   },
@@ -30,10 +30,10 @@
       "id": "conn-2",
       "type": "female",
       "position": {
-        "x": 155.9,
-        "y": 90
+        "x": -155.9,
+        "y": -90
       },
-      "angle": 120,
+      "angle": 150,
       "height": 12
     }
   ],
