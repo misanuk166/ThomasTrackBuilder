@@ -104,6 +104,12 @@ function renderArcPath(ctx: CanvasRenderingContext2D, path: ArcPathDefinition) {
   const startAngleRad = (path.startAngle * Math.PI) / 180;
   const endAngleRad = (path.endAngle * Math.PI) / 180;
 
+  // Move to the start point of the arc
+  const startX = path.center.x + path.radius * Math.cos(startAngleRad);
+  const startY = path.center.y + path.radius * Math.sin(startAngleRad);
+  ctx.moveTo(startX, startY);
+
+  // Draw the arc
   ctx.arc(
     path.center.x,
     path.center.y,
