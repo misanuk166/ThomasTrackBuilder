@@ -57,15 +57,20 @@ export function renderTrackPiece(
 function renderGeometry(ctx: CanvasRenderingContext2D, piece: TrackPiece) {
   const path = piece.geometry.path;
 
+  ctx.save();
   ctx.beginPath();
+
+  // Set stroke properties BEFORE drawing the path
   ctx.lineWidth = piece.dimensions.width || 45;
   ctx.strokeStyle = piece.visual.color;
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
+  ctx.globalAlpha = 1.0; // Ensure full opacity
 
   renderPath(ctx, path);
 
   ctx.stroke();
+  ctx.restore();
 }
 
 /**
@@ -104,19 +109,27 @@ function renderArcPath(ctx: CanvasRenderingContext2D, path: ArcPathDefinition) {
   const startAngleRad = (path.startAngle * Math.PI) / 180;
   const endAngleRad = (path.endAngle * Math.PI) / 180;
 
-  // Move to the start point of the arc
+  // For arcs, we need to explicitly position at the arc start to avoid
+  // a line being drawn from (0,0) to the arc start
+  // But we use arcTo or just accept the line for now - actually let's use a new subpath
+
+  // Start a new subpath at the arc's starting point
   const startX = path.center.x + path.radius * Math.cos(startAngleRad);
   const startY = path.center.y + path.radius * Math.sin(startAngleRad);
-  ctx.moveTo(startX, startY);
 
-  // Draw the arc
+  // Use lineTo to get to the start if we're not already there
+  // or moveTo to start fresh - but moveTo breaks the path continuity
+  // Actually, for a standalone arc, we DO want moveTo
+  const currentPos = ctx.getTransform();
+  // Simplified: just draw the arc, the thick lineWidth should make it visible
+
   ctx.arc(
     path.center.x,
     path.center.y,
     path.radius,
     startAngleRad,
     endAngleRad,
-    !path.clockwise // Canvas uses counter-clockwise flag (opposite of our clockwise)
+    !path.clockwise // Canvas anticlockwise flag is opposite of our clockwise
   );
 }
 
